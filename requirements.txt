@@ -1,3 +1,3 @@
 TelegramBotAPI
-telebot
-types
+import telebot
+from telebot import types
