@@ -1,1 +1,1 @@
-bot: python3 mailing bot.py
+worker: python main.py
