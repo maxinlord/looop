@@ -1,1 +1,1 @@
-pip TelegramBotAPI
+pip install TelegramBotAPI
