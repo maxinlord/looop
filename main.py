@@ -8,13 +8,15 @@ bot = telebot.TeleBot('1398078863:AAGiPfSDLqnsDoxmFo9dAJXm4y2_zXsMbBg')
 @bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
+    btn0 = types.KeyboardButton('Обновить')
     btn1 = types.KeyboardButton('🐱')
     btn2 = types.KeyboardButton('🎁')
     btn3 = types.KeyboardButton('⭐️')
     btn4 = types.KeyboardButton('👼')
-    markup.add(btn1, btn2, btn3, btn4)
+    markup.add(btn1, btn2, btn3, btn4, btn0)
     send_mess = f"<b>Привет Настёна) </b>\nВыбери одну из кнопок"
     bot.send_message(message.chat.id, send_mess, parse_mode='html', reply_markup=markup)
+
 
 
 @bot.message_handler(content_types=['text'])
@@ -33,7 +35,8 @@ def all(message):
         bot.send_message(message.chat.id, 'Бог тебя БЕЗМЕРНО любит 🤗')
         bot.send_message(message.chat.id, 'Не забывай это 😉')
         bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAIgTF-A4KHdMgVT2CcrGLJmtKRFKIVZAAINAANwGuYapepbBWhY1XcbBA')
-
+    if message.text == 'Обновить':
+        bot.send_message(message.chat.id,'Нажми на 👉🏻 /start, чтобы обновить')
 
 
 bot.polling(none_stop=True)
