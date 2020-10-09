@@ -1,2 +1,2 @@
 TelegramBotAPI
-telebot
+telebot types
