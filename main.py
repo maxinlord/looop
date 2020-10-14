@@ -21,7 +21,7 @@ def start(message):
 
 @bot.message_handler(content_types=['text'])
 def all(message):
-        bot.send_message(-1001376078813,f"@{message.from_user.username} - {message.from_user.first_name}({message.from_user.last_name})\nОтправил текст: \n\n{message.text}",parse_mode='html')
+        bot.send_message(message.chat.id,f"@{message.from_user.username} - {message.from_user.first_name}({message.from_user.last_name})\nОтправил текст: \n\n{message.text}",parse_mode='html')
     if message.text == '🐱':
         bot.send_message(message.chat.id, 'Ты НЕПОВТОРИМАЯ')
         bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAIgLF-AwXMT0bKSF28uqA06fiT3g0J_AAL3AANWnb0KC3IkHUj0DTAbBA')
